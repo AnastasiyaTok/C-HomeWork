@@ -6,29 +6,26 @@ Console.Clear();
 Console.WriteLine("Введите размер массива: ");
 int n = Convert.ToInt32(Console.ReadLine());
 int[] array = new int[n];
-
 InputArray(array);
 Console.WriteLine($"[{string.Join(",  ", array)}]");
-ReleaseArray(array);
+RealeseArray(array);
 
-int IndexNegativ = 0;
-for (int i = 0; i < array.Length; i += 2)
+int NegativIndex = 0;
+
+for (int i = 1; i < array.Length; i += 2)
 {
-    IndexNegativ += array[i];
-    
+    NegativIndex += array[i];
 }
-
-Console.WriteLine($"Сумма элементов стоящих на нечетных позициях: {IndexNegativ} ");
-
+Console.WriteLine($"Сумма элементов стоящих на нечетных позициях: {NegativIndex} ");
 void InputArray(int[] array)
 {
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        array[i] = new Random().Next(10,99);
+        array[i] = new Random().Next(-100, 101);
     }
 }
-void ReleaseArray(int[] array)
+
+void RealeseArray(int[] array)
 {
-    for(int i = 0; i < array.Length; i++);
-   
+    for (int i = 0; i < array.Length; i++);
 }
